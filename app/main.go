@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 	"time"
+	"fmt"
 
 	"github.com/gorilla/mux"
 	"go.uber.org/zap"
@@ -38,8 +39,7 @@ type Conf struct {
 		Proxy   []string `json:"proxy"`
 		Direct  []string `json:"direct,omitempty"`
 		Blocked []string `json:"blocked,omitempty"`
-	} `json:"domain_rules"`,
-	StaticPIDRules []string
+	} `json:"domain_rules"`
 }
 
 type App struct {
@@ -93,8 +93,8 @@ func NewApp(file string, timeout time.Duration, w io.Writer) (app *App, err erro
 	return
 }
 
-func (app *App) setStaticPID(pid unit) {
-	conf.StaticPIDRules = append(StaticPIDRules, pid)
+func (app *App) setStaticPID(pid uint32) {
+	conf.AppRules.Proxy = append(conf.AppRules.Proxy, fmt.Sprintf("PID:%d", pid))
 }
 
 func (app *App) readConfig() error {
