@@ -28,7 +28,7 @@ func main() {
 	}
 	flag.BoolVar(&conf.Mode, "v", false, "enable verbose mode")
 	flag.StringVar(&conf.File, "c", "config.json", "config file")
-	flag.UintVar(&conf.PID, "pid", 0, "set PID statically")
+	flag.UintVar(&conf.PID, "pid", 0, "add unsafe process by static PID")
 	flag.Parse()
 
 	w := io.Writer(nil)
@@ -44,7 +44,7 @@ func main() {
 		log.Panic(err)
 	}
 	
-	// set PID statically
+	// add unsafe process by static PID
 	app.setStaticPID(conf.PID)
 
 	fmt.Println("shadow - a transparent proxy for Windows, Linux and macOS")
