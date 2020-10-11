@@ -6,10 +6,10 @@ A shadowsocks, trojan and socks5 client for Windows, Linux and macOS.
 
 ```
 # linux darwin windows,!wintun
-go get -v -ldflags="-s -w" -trimpath github.com/imgk/shadow
+go get -v -ldflags="-s -w" -trimpath github.com/gnh1201/shadow
 
 # windows,wintun
-go get -v -ldflags="-s -w" -trimpath -tags=wintun github.com/imgk/shadow
+go get -v -ldflags="-s -w" -trimpath -tags=wintun github.com/gnh1201/shadow
 ```
 
 ## How to use it

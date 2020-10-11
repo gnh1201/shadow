@@ -10,8 +10,8 @@ import (
 	"github.com/miekg/dns"
 	"go.uber.org/zap"
 
-	"github.com/imgk/shadow/common"
-	"github.com/imgk/shadow/netstack/core"
+	"github.com/gnh1201/shadow/common"
+	"github.com/gnh1201/shadow/netstack/core"
 )
 
 func NewPacketConn(conn core.PacketConn, target net.Addr, addr net.Addr, stack *Stack) common.PacketConn {

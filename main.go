@@ -12,12 +12,12 @@ import (
 	"time"
 
 	//protocols
-	_ "github.com/imgk/shadow/protocol/http"
-	_ "github.com/imgk/shadow/protocol/shadowsocks"
-	_ "github.com/imgk/shadow/protocol/socks"
-	_ "github.com/imgk/shadow/protocol/trojan"
+	_ "github.com/gnh1201/shadow/protocol/http"
+	_ "github.com/gnh1201/shadow/protocol/shadowsocks"
+	_ "github.com/gnh1201/shadow/protocol/socks"
+	_ "github.com/gnh1201/shadow/protocol/trojan"
 
-	"github.com/imgk/shadow/app"
+	"github.com/gnh1201/shadow/app"
 )
 
 func main() {

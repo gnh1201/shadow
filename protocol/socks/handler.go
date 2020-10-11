@@ -7,8 +7,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/imgk/shadow/common"
-	"github.com/imgk/shadow/protocol"
+	"github.com/gnh1201/shadow/common"
+	"github.com/gnh1201/shadow/protocol"
 )
 
 func init() {

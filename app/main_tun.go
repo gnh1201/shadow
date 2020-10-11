@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/imgk/shadow/common"
-	"github.com/imgk/shadow/device/tun"
-	"github.com/imgk/shadow/netstack"
-	"github.com/imgk/shadow/protocol"
+	"github.com/gnh1201/shadow/common"
+	"github.com/gnh1201/shadow/device/tun"
+	"github.com/gnh1201/shadow/netstack"
+	"github.com/gnh1201/shadow/protocol"
 )
 
 func (app *App) Run() (err error) {

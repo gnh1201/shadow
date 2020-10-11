@@ -12,7 +12,7 @@ import (
 	"golang.org/x/net/ipv4"
 	"golang.org/x/net/ipv6"
 
-	"github.com/imgk/shadow/common"
+	"github.com/gnh1201/shadow/common"
 )
 
 const (

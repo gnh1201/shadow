@@ -17,7 +17,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/imgk/shadow/common"
+	"github.com/gnh1201/shadow/common"
 )
 
 var errNotFile = errors.New("not a file")

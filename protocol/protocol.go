@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/imgk/shadow/common"
+	"github.com/gnh1201/shadow/common"
 )
 
 var errNotProtocol = errors.New("not a supported scheme")

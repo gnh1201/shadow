@@ -8,7 +8,7 @@ import (
 
 	"github.com/miekg/dns"
 
-	"github.com/imgk/shadow/common"
+	"github.com/gnh1201/shadow/common"
 )
 
 var errAddrType = errors.New("not support")

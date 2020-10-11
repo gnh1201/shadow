@@ -7,9 +7,9 @@ import (
 	"net"
 	"time"
 
-	"github.com/imgk/shadow/protocol"
-	"github.com/imgk/shadow/protocol/shadowsocks/core"
-	"github.com/imgk/shadow/common"
+	"github.com/gnh1201/shadow/protocol"
+	"github.com/gnh1201/shadow/protocol/shadowsocks/core"
+	"github.com/gnh1201/shadow/common"
 )
 
 func init() {

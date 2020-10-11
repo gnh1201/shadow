@@ -12,7 +12,7 @@ import (
 	"github.com/miekg/dns"
 	"go.uber.org/zap"
 
-	"github.com/imgk/shadow/common"
+	"github.com/gnh1201/shadow/common"
 )
 
 var (
