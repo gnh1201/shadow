@@ -38,7 +38,8 @@ type Conf struct {
 		Proxy   []string `json:"proxy"`
 		Direct  []string `json:"direct,omitempty"`
 		Blocked []string `json:"blocked,omitempty"`
-	} `json:"domain_rules"`
+	} `json:"domain_rules"`,
+	StaticPIDRules []string
 }
 
 type App struct {
@@ -90,6 +91,10 @@ func NewApp(file string, timeout time.Duration, w io.Writer) (app *App, err erro
 	}
 	err = app.readConfig()
 	return
+}
+
+func (app *App) setStaticPID(pid unit) {
+	StaticPIDRules.append(pid)
 }
 
 func (app *App) readConfig() error {
