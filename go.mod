@@ -1,4 +1,4 @@
-module github.com/imgk/shadow
+module github.com/gnh1201/shadow
 
 go 1.15
 
