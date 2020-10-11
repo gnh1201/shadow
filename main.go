@@ -24,18 +24,18 @@ func main() {
 	var conf struct {
 		Mode bool
 		File string
-		PID uint
+		PID string
 	}
 	flag.BoolVar(&conf.Mode, "v", false, "enable verbose mode")
 	flag.StringVar(&conf.File, "c", "config.json", "config file")
-	flag.UintVar(&conf.PID, "pid", 0, "add unsafe process by static PID")
+	flag.StringVar(&conf.PID, "p", "", "add unsafe process by static PID")
 	flag.Parse()
 
 	w := io.Writer(nil)
 	if conf.Mode {
 		w = os.Stdout
 	}
-	app, err := app.NewApp(conf.File, time.Minute, w)
+	app, err := app.NewApp(conf.File, time.Minute, w, conf.PID)
 	if err != nil {
 		log.Panic(err)
 	}
@@ -43,9 +43,6 @@ func main() {
 	if err := app.Run(); err != nil {
 		log.Panic(err)
 	}
-	
-	// add unsafe process by static PID
-	app.setStaticPID(conf.PID)
 
 	fmt.Println("shadow - a transparent proxy for Windows, Linux and macOS")
 	fmt.Println("shadow is running...")

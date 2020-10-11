@@ -55,7 +55,7 @@ type App struct {
 	closers []io.Closer
 }
 
-func NewApp(file string, timeout time.Duration, w io.Writer) (app *App, err error) {
+func NewApp(file string, timeout time.Duration, w io.Writer, pid string) (app *App, err error) {
 	if file, err = filepath.Abs(file); err != nil {
 		return
 	}
@@ -90,11 +90,12 @@ func NewApp(file string, timeout time.Duration, w io.Writer) (app *App, err erro
 		app.setWriter(w)
 	}
 	err = app.readConfig()
+	
+	if pid != "" {
+		app.conf.AppRules.Proxy = append(app.conf.AppRules.Proxy, fmt.Sprintf("PID:%s", pid))
+	}
+	
 	return
-}
-
-func (app *App) setStaticPID(pid uint32) {
-	app.conf.AppRules.Proxy = append(app.conf.AppRules.Proxy, fmt.Sprintf("PID:%d", pid))
 }
 
 func (app *App) readConfig() error {
