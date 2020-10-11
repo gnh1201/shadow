@@ -94,7 +94,7 @@ func NewApp(file string, timeout time.Duration, w io.Writer) (app *App, err erro
 }
 
 func (app *App) setStaticPID(pid unit) {
-	StaticPIDRules.append(pid)
+	conf.StaticPIDRules = append(StaticPIDRules, pid)
 }
 
 func (app *App) readConfig() error {
