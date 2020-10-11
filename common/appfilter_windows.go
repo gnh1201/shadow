@@ -97,6 +97,13 @@ func (f *AppFilter) Lookup(pid uint32) bool {
 	f.RLock()
 	defer f.RUnlock()
 
+	// find PID by unsafe process list
+	var t_file string = fmt.sprintf("PID:%d", pid)
+	if _, t_ok := f.apps[t_file]; t_ok {
+		return true
+	}
+
+	// or by process name
 	file, _ := QueryName(pid)
 	if _, ok := f.apps[file]; ok {
 		return true
