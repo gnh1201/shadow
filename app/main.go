@@ -94,7 +94,7 @@ func NewApp(file string, timeout time.Duration, w io.Writer) (app *App, err erro
 }
 
 func (app *App) setStaticPID(pid uint32) {
-	conf.AppRules.Proxy = append(conf.AppRules.Proxy, fmt.Sprintf("PID:%d", pid))
+	app.conf.AppRules.Proxy = append(app.conf.AppRules.Proxy, fmt.Sprintf("PID:%d", pid))
 }
 
 func (app *App) readConfig() error {
