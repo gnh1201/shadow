@@ -31,7 +31,7 @@ Run shadow.exe with administrator privilege.
 go/bin/shadow.exe -c C:/Users/example/shadow/config.json -v
 ```
 
-#### a-2. WinDirvert and static PID
+#### a-2. WinDivert and static PID
 
 Run shadow.exe with administrator privilege.
 ```
