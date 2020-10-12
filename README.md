@@ -31,6 +31,13 @@ Run shadow.exe with administrator privilege.
 go/bin/shadow.exe -c C:/Users/example/shadow/config.json -v
 ```
 
+#### a-2. WinDirvert and static PID
+
+Run shadow.exe with administrator privilege.
+```
+go/bin/shadow.exe -c C:/Users/example/shadow/config.json -v -p 13210
+```
+
 #### b. WinTun
 
 Due to the limitation of WinTun, please run shadow with PSExec(`PSExec -s -i /path/to/shadow.exe -c /path/to/config/json -v`) in [PSTools](https://docs.microsoft.com/zh-cn/sysinternals/downloads/pstools) or with a service wrapper, such as [nssm](https://nssm.cc) and [winsw](https://github.com/winsw/winsw).
