@@ -20,6 +20,7 @@ Usage of go/bin/shadow:
   -c string
     	config file (default "config.json")
   -v	enable verbose mode
+  -p  static PID(Process ID)
 ```
 
 ### Windows
