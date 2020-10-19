@@ -24,7 +24,7 @@ func main() {
 	var conf struct {
 		Mode bool
 		File string
-		PID string,
+		PID string
 		Server string
 	}
 	flag.BoolVar(&conf.Mode, "v", false, "enable verbose mode")
