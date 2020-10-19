@@ -15,6 +15,7 @@ import (
 )
 
 func (app *App) Run() (err error) {
+	/*
 	muName := windows.StringToUTF16Ptr("SHADOW-MUTEX")
 
 	mutex, err := windows.OpenMutex(windows.MUTEX_ALL_ACCESS, false, muName)
@@ -44,6 +45,7 @@ func (app *App) Run() (err error) {
 	default:
 		return fmt.Errorf("wait for mutex event id error: %w", event)
 	}
+	*/
 
 	resolver, err := common.NewResolver(app.conf.NameServer)
 	if err != nil {
