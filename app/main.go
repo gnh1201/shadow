@@ -96,7 +96,7 @@ func NewApp(file string, timeout time.Duration, w io.Writer, pid string, server 
 	}
 	
 	if server != "" {
-		app.conf.server = server
+		app.conf.Server = server
 	}
 	
 	return
