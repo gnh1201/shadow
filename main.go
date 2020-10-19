@@ -24,18 +24,20 @@ func main() {
 	var conf struct {
 		Mode bool
 		File string
-		PID string
+		PID string,
+		Server string
 	}
 	flag.BoolVar(&conf.Mode, "v", false, "enable verbose mode")
 	flag.StringVar(&conf.File, "c", "config.json", "config file")
-	flag.StringVar(&conf.PID, "p", "", "add unsafe process by static PID")
+	flag.StringVar(&conf.PID, "p", "", "add unsafe process by PID")
+	flag.StringVar(&conf.Server, "s", "", "add server")
 	flag.Parse()
 
 	w := io.Writer(nil)
 	if conf.Mode {
 		w = os.Stdout
 	}
-	app, err := app.NewApp(conf.File, time.Minute, w, conf.PID)
+	app, err := app.NewApp(conf.File, time.Minute, w, conf.PID, conf.Server)
 	if err != nil {
 		log.Panic(err)
 	}
